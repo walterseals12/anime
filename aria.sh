@@ -1,6 +1,6 @@
 if [ -z $TORRENT_TIMEOUT ]
 then
-   TORRENT_TIMEOUT=0
+   TORRENT_TIMEOUT=200
 fi
 tracker_list=$(curl -Ns https://raw.githubusercontent.com/XIU2/TrackersListCollection/master/all.txt https://ngosang.github.io/trackerslist/trackers_all_http.txt https://newtrackon.com/api/all https://raw.githubusercontent.com/hezhijie0327/Trackerslist/main/trackerslist_tracker.txt | awk '$0' | tr '\n\n' ',')
 aria2c --enable-rpc=true --check-certificate=false --daemon=true \
